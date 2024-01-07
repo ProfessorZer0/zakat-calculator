@@ -1,0 +1,308 @@
+body {
+  background-color: #f7f7f7;
+}
+
+
+
+.toggle-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+#generate_button{
+  margin-left: 10px;
+}
+
+.toggle-label {
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+.toggle {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+}
+
+.toggle-input {
+  display: none;
+}
+
+.toggle-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+#canvas {
+  width: 100%;
+  height: auto;
+  max-width: 500px; /* adjust max width as needed */
+  display: block;
+  margin: auto;
+}
+
+
+
+
+.toggle-slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: #fff;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+.toggle-input:checked + .toggle-slider {
+  background-color: #2196F3;
+}
+
+.toggle-input:checked + .toggle-slider:before {
+  transform: translateX(26px);
+}
+
+.toggle-label.active {
+  font-weight: bold;
+}
+
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  font-size: 36px;
+  margin-bottom: 30px;
+  color: #b92526;
+  text-align: center;
+}
+
+h1 a {
+  font-size: 36px;
+  margin-bottom: 30px;
+  color: #b92526;
+  text-align: center;
+  text-decoration: none; /* remove underline */
+}
+
+h1 a:hover {
+  color: #b92526; /* keep hover color same */
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #b92526;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+label {
+  font-size: 20px;
+  color: #030f27;
+}
+
+.form-control {
+  font-size: 16px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.form-control:focus {
+  outline: none;
+  border: 1px solid #1399a3;
+  box-shadow: 0 0 5px rgba(19, 153, 163, 0.5);
+}
+
+.btn-primary {
+  background-color: #1399a3;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #a81d1e;
+}
+
+.btn-primary:focus {
+  box-shadow: none;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-center button {
+  margin-top: 30px;
+}
+
+  .modal-footer {
+    display: block !important;
+  } 
+  
+
+#donate_modal button.close {
+  margin-top: 10px !important;
+}
+
+.form-group:last-child {
+  margin-bottom: 0;
+}
+
+
+/* CSS for Donate Modal */
+#donate_modal .modal-content {
+  border-radius: 0;
+}
+
+#donate_modal .modal-header {
+  background-color: #3c8dbc;
+  color: #fff;
+  border-bottom: none;
+}
+
+#donate_modal .modal-title {
+  font-size: 24px;
+}
+
+button#donate_now_button {
+  margin-top: 10px !important;
+}
+
+#donate_modal .close {
+    color: #000;
+    opacity: 1;
+    text-shadow: none;
+    font-weight: 800;
+}
+
+#donate_modal .modal-body {
+  padding: 20px 40px;
+}
+
+#donate_modal .form-control {
+  border-radius: 0;
+  border-color: #d2d6de;
+}
+
+#donate_modal .input-group-text {
+  background-color: #d2d6de;
+  border-color: #d2d6de;
+  color: #555;
+}
+
+#donate_modal .input-group-text:hover {
+  background-color: #b8c7d1;
+  border-color: #b8c7d1;
+  color: #555;
+}
+
+#donate_modal hr {
+  border-top: 1px solid #d2d6de;
+  margin: 20px -40px;
+}
+
+#donate_modal p {
+  margin-top: 20px;
+  font-size: 16px;
+}
+
+#donate_modal .modal-footer {
+  border-top: none;
+}
+
+#donate_modal .btn-secondary {
+  background-color: #d2d6de;
+  border-color: #d2d6de;
+  color: #555;
+}
+
+#donate_modal .btn-secondary:hover {
+  background-color: #b8c7d1;
+  border-color: #b8c7d1;
+  color: #555;
+}
+
+button.close {
+  color: #000;
+}
+
+button.close:hover {
+  color: #fff;
+  background-color: #dc3545;
+}
+
+
+.modal-dialog {
+  max-width: 800px; /* Set your desired max-width */
+  width: 90%; /* Set your desired width */
+}
+
+#donate_modal .btn-success {
+  background-color: #00a65a;
+  border-color: #00a65a;
+}
+
+#donate_modal .btn-success:hover {
+  background-color: #008d4c;
+  border-color: #008d4c;
+}
+
+@media (max-width: 767px) {
+  #donate_modal .modal-content {
+    box-shadow: none;
+    border: none;
+  }
+  
+  .modal-footer {
+    display: block !important;
+  } 
+
+  .modal-body img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  #donate_modal .modal-body {
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 0px;
+
+  }
+
+  #donate_modal .form-control {
+    margin-bottom: 10px;
+  }
+}
+
+
+
+
+/* For desktop devices */
+@media only screen and (min-width: 768px) {
+  .modal-body img {
+    max-height: 360px;
+    max-width: 100%;
+    height: auto;
+    margin: auto;
+  }
+}
+

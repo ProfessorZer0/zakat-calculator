@@ -1,0 +1,181 @@
+ <head>
+       <meta charset="UTF-8">
+
+    <title>Zakat Calculator - Calculate Your Zakat with Kewa.Education</title>
+    <link rel="icon" href="https://kewa.education/wp-content/uploads/2022/04/cropped-jamia-logo-original-PNG-32x32.png" sizes="32x32" />
+
+	<meta name="description" content="Easily calculate your Zakat with Kewa.Education's Zakat Calculator. Our user-friendly tool helps you determine the amount of Zakat you owe based on your income, assets, and other financial factors.">
+	<meta name="keywords" content="zakat calculator, zakat, islamic charity, zakat calculation, zakat payment, zakat calculation tool, zakat calculator online, zakat calculator for business, zakat calculator for individuals, kewa.education">
+	<meta property="og:image" content="https://kewa.education/zakat/zakatmeta.jpeg">
+	<link rel="canonical" href="https://kewa.education/zakat">
+	<meta name="author" content="Nawaf">
+	<meta name="robots" content="index, follow">
+	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+ 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1E0P6TSJ7D"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-1E0P6TSJ7D');
+</script>
+    <script src="script.js"></script>
+ </head>
+<div class="container">
+ <center>
+  <a href="https://kewa.education"><img src="https://kewa.education/wp-content/uploads/2022/04/cropped-jamia-logo-original-PNG-1.png" width="110" height="107" alt="Jamia Logo"></a>
+  <h1 class="text-center"><a href="https://kewa.education">Kewa Zakat Calculator</a></h1>
+   <div class="toggle-container">
+  <label class="toggle-label">English</label>
+  <div class="toggle">
+    <input type="checkbox" class="toggle-input" id="toggle-1">
+    <label class="toggle-slider" for="toggle-1"></label>
+  </div>
+  <label class="toggle-label"> Urdu</label>
+</div>
+
+  <hr>
+  <form>
+    <div class="form-group">
+      <label for="amount_home">Cash at Home</label> - <a href="https://islamqa.info/en/answers/2795/what-is-the-nisab-on-paper-money" id="fatwa" target="_blank"> Fatwa </a>
+      <input id="amount_home" class="form-control" step="any" type="number" onchange="calculate()">
+    </div>
+    <div class="form-group">
+      <label for="amount_bank">Bank Account Balance</label> - <a href="https://islamqa.info/en/answers/88757/zakaah-on-money-in-the-bank"  id="fatwa" target="_blank"> Fatwa </a>
+      <input id="amount_bank" class="form-control" step="any" type="number" onchange="calculate()">
+    </div>
+    <div class="form-group">
+      <label for="amount_shares">Stocks and Shares</label> - <a href="https://islamqa.info/en/answers/65722/zakaah-on-shares" id="fatwa" target="_blank"> Fatwa </a>
+      <input id="amount_shares" class="form-control" step="any" type="number" onchange="calculate()">
+    </div>
+    <div class="form-group">
+      <label for="amount_merchandise">Profits &amp; Inventory</label> - <a href="https://islamqa.info/en/answers/169961/should-he-pay-zakaah-on-the-profits-only-or-on-the-capital-too" id="fatwa" target="_blank"> Fatwa </a>
+      <input id="amount_merchandise" class="form-control" step="any" type="number" onchange="calculate()">
+    </div>
+    <div class="form-group">
+      <label for="amount_gold">Gold (In rupees)</label> - <a href="https://islamqa.info/ur/answers/220039/%D8%B3%D9%88%D9%86%DB%92-%DB%8C%D8%A7-%DA%86%D8%A7%D9%86%D8%AF%DB%8C-%DA%A9%D8%A7-%D9%86%D8%B5%D8%A7%D8%A8-%D9%85%DA%A9%D9%85%D9%84-%DA%A9%D8%B1%D9%86%DB%92-%DA%A9%DB%8C%D9%84%D9%89%DB%92-%D9%86%D9%82%D8%AF%DB%8C-%D8%B3%D8%A7%D8%AA%DA%BE-%D9%85%D9%84%D8%A7%D9%86%DB%92-%DA%A9%D8%A7-%D8%AD%DA%A9%D9%85" id="fatwa1" target="_blank"> Fatwa </a>
+      <input id="amount_gold" class="form-control" step="any" type="number" onchange="calculate()">
+    </div>
+    <div class="form-group">
+      <label for="amount_silver">Silver (In rupees)</label> - <a  href="https://islamqa.info/ur/answers/220039/%D8%B3%D9%88%D9%86%DB%92-%DB%8C%D8%A7-%DA%86%D8%A7%D9%86%D8%AF%DB%8C-%DA%A9%D8%A7-%D9%86%D8%B5%D8%A7%D8%A8-%D9%85%DA%A9%D9%85%D9%84-%DA%A9%D8%B1%D9%86%DB%92-%DA%A9%DB%8C%D9%84%D9%89%DB%92-%D9%86%D9%82%D8%AF%DB%8C-%D8%B3%D8%A7%D8%AA%DA%BE-%D9%85%D9%84%D8%A7%D9%86%DB%92-%DA%A9%D8%A7-%D8%AD%DA%A9%D9%85" id="fatwa1" target="_blank"> Fatwa </a>
+      <input id="amount_silver" class="form-control" step="any" type="number" onchange="calculate()">
+    </div>
+    <div class="form-group">
+      <label for="amount_property">Investment Property</label> - <a href="https://islamqa.info/en/answers/231858/how-to-pay-zakah-on-real-estate" id="fatwa" target="_blank"> Fatwa </a>
+      <input id="amount_property" class="form-control" step="any" type="number" onchange="calculate()">
+    </div>
+    <div class="form-group">
+      <label for="amount_other">Any Other Income</label> 
+      <input id="amount_other" class="form-control" step="any" type="number" onchange="calculate()">
+    </div>
+  </form>
+ 
+  
+  <h1 class="text-center">Totals</h1>
+  <hr>
+  <form>
+    <div class="form-group">
+      <label for="amount_eligable">Total Amount</label>
+      <input id="amount_eligable" class="form-control" type="text" readonly="readonly" onchange="calculate()">
+    </div>
+    <div class="form-group">
+      <label for="amount_zakat">Your Zakat Total (2.5% of Total Amount)</label>
+      <input id="amount_zakat" class="form-control" type="text" readonly="readonly">
+    </div>
+  </form>
+  
+  <div class="text-center">
+     <div class="d-inline-flex">
+    <button id="donate_button" type="button" class="btn btn-primary btn-lg" aria-label="Donate" data-amount="50" data-formId="2426">Donate For Madrasa</button>
+    
+  <!-- "Generate Image" button -->
+  <div class="text-center">
+    <button id="generate_button" type="button" class="btn btn-primary btn-lg" aria-label="Generate Image">Generate Image</button>
+  </div>  </div><br><br>
+    <h3 class="text-center">Jamia Mohammadia Kokan</h3>
+
+  <!-- canvas element to hold generated image -->
+  <canvas id="canvas"></canvas>
+  <!-- "Download Image" button -->
+<div class="text-center">
+    <div class="d-inline-flex">
+  <button id="download_button" type="button" class="btn btn-primary btn-lg" aria-label="Download Image" style="display:none;">Download Image</button>
+  </div>
+</div>
+  
+  
+ <!-- Donation modal -->
+<div class="modal fade" id="donate_modal" tabindex="-1" role="dialog" aria-labelledby="donate_modal_label" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="donate_modal_label">Make a Donation</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="closeModal()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form id="donation_form">
+          <div class="form-group">
+            <label for="name_input">Name</label>
+            <input id="name_input" class="form-control" type="text" placeholder="Enter your name">
+          </div>
+          <div class="form-group">
+            <label for="mobile_input">Mobile Number</label>
+            <input id="mobile_input" class="form-control" type="number" placeholder="Enter your mobile number">
+          </div>
+          <div class="form-group">
+            <label for="amount_input">Amount (₹)</label>
+            <input id="amount_input" class="form-control" type="number" placeholder="Enter the amount you wish to donate">
+          </div>
+          <hr>
+          <p>Your donation will go towards supporting our mission and helping those in need.</p>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button id="donate_now_button" type="button" class="btn btn-success">Donate For Madrasa</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+  <!-- Modal -->
+<div class="modal fade" id="upipopup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="myModalLabel">Make a Donation</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="closeModal()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-6">
+            <img src="zakatqr.jpg" alt="zakat image">
+          </div>
+          <div class="col-md-6">
+            <p>Help us make a difference by making a donation today.</p>
+            <button type="button" class="btn btn-success">Donate Now</button>
+          </div>
+        </div>
+        <hr>
+        <p>Your donation will go towards supporting our mission and helping those in need.</p>
+      </div>
+    </div>
+  </div>
+ </div>
+</div>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</div>
